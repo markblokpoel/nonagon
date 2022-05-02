@@ -1,0 +1,74 @@
+<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbyhuU_cNeB7AFgKaw4j9XQ9dQMSpPnImd07wbljPGk1KsVokAmZgl1EUXopucgBdT0g/exec">
+  <fieldset>
+
+  <!-- Grid -->
+  <div class="grid">
+    <label for="first-name">First Name:
+    <input type="text" placeholder="" id="first-name" name="First Name" required>
+    </label>
+
+    <label for="surname">Surname:
+    <input type="text" placeholder="" id="surname" name="Surname" required>
+    </label>
+  </div>
+
+  <input id="honeypot" type="text" name="honeypot" value="" style="display:none">
+
+  <label for="computer-science">Computer Science
+    <input type="range" min="0" max="100" value="50" id="computer-science" name="Computer Science" required>
+  </label>
+
+  <label for="ethics">Ethics
+    <input type="range" min="0" max="100" value="50" id="ethics" name="Ethics" required>
+  </label>
+  <label for="human-computer-interaction">Human Computer Interaction
+    <input type="range" min="0" max="100" value="50" id="human-computer-interaction" name="Human Computer Interaction" required>
+  </label>
+  <label for="mathematics">Mathematics
+    <input type="range" min="0" max="100" value="50" id="mathematics" name="Mathematics" required>
+  </label>
+  <label for="neuroscience">Neuroscience
+    <input type="range" min="0" max="100" value="50" id="neuroscience" name="Neuroscience" required>
+  </label>
+  <label for="philosophy">Philosophy
+    <input type="range" min="0" max="100" value="50" id="philosophy" name="Philosophy" required>
+  </label>
+  <label for="psychology">Psychology
+    <input type="range" min="0" max="100" value="50" id="psychology" name="Psychology" required>
+  </label>
+  <label for="science-and-technology-studies">Science and Technology Studies
+    <input type="range" min="0" max="100" value="50" id="science-and-technology-studies" name="Science and Technology Studies" required>
+  </label>
+  <label for="statistics">Statistics
+    <input type="range" min="0" max="100" value="50" id="statistics" name="Statistics" required>
+  </label>
+
+
+
+
+
+  <!-- Markup example 2: input is after label -->
+  <!-- <label for="email">Email address</label>
+  <input type="email" id="email" name="email" placeholder="Email address" required>
+  <small>We'll never share your email with anyone else.</small> -->
+
+  <!-- Button -->
+  <button type="submit">Submit</button>
+
+  <!-- <input type="submit" value="Submit"> -->
+
+  </fieldset>
+
+</form>
+
+
+<!-- Customise the Thankyou Message People See when they submit the form: -->
+<div style="display:none;" id="thankyou_message">
+  <h2>Thank you!</h2>
+  <p>The new person should now appear in the list below.</p>
+
+
+</div>
+
+<!-- Submit the Form to Google Using "AJAX" -->
+<script data-cfasync="false" type="text/javascript" src="./js/form-submission-handler.js"></script>

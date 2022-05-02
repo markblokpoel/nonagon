@@ -1,88 +1,16 @@
-<!doctype html>
+---
+layout: base
+---
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% include header.html %}
 
-  <title>A Basic HTML5 Template</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
-  <meta name="author" content="SitePoint">
+<div class="grid">
 
-  <meta property="og:title" content="A Basic HTML5 Template">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
+{% include nonagon.html %}
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{% include form.html %}
+</div>
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
-</head>
-
-<body>
-    <!-- your content here... -->
-
-    <canvas id="myChart" width="400" height="400"></canvas>
-    <script>
-    const ctx = document.getElementById('myChart');
-    const myChart = new Chart(ctx, {
-        type: 'radar',
-        data: {
-          labels: [
-            'Computer Science',
-            'Ethics',
-            'Human Computer Interaction',
-            'Mathematics',
-            'Neuroscience',
-            'Philosophy',
-            'Psychology',
-            'Science and Technology Studies',
-            'Statistics'
-          ],
-                      datasets: [{
-                        label: 'Dr A Test',
-                        data: [65, 59, 90, 81, 56, 55, 40, 34, 21],
-                        fill: true,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgb(255, 99, 132)',
-                        pointBackgroundColor: 'rgb(255, 99, 132)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(255, 99, 132)'
-
-            },
-            {
-             label: 'Prof Another Test',
-             data: [28, 48, 40, 19, 96, 27, 100, 0, 78],
-             fill: true,
-             backgroundColor: 'rgba(54, 162, 235, 0.2)',
-             borderColor: 'rgb(54, 162, 235)',
-             pointBackgroundColor: 'rgb(54, 162, 235)',
-             pointBorderColor: '#fff',
-             pointHoverBackgroundColor: '#fff',
-             pointHoverBorderColor: 'rgb(54, 162, 235)'
-           }]
-        },
-        options: {
-
-    scales: {
-        r: {
-            angleLines: {
-                display: false
-            },
-            suggestedMin: 0,
-            suggestedMax: 100
-        }
-    }
-
-        }
-    });
-    </script>
-
-   </body>
-</html>
+<!-- {% include table.html %} -->
+<!-- {% include about.html %} -->
+<!-- {% include art.html %} -->
