@@ -175,15 +175,20 @@ function updateConfigByMutating(chart) {
 }
 
 
-const setBg = () => {
-  const randomColor = Math.floor(Math.random()*16777215).toString(16);
-  document.body.style.backgroundColor = "#" + randomColor;
-  color.innerHTML = "#" + randomColor;
-}
+// const setBg = () => {
+//   const randomColor = Math.floor(Math.random()*16777215).toString(16);
+//   document.body.style.backgroundColor = "#" + randomColor;
+//   color.innerHTML = "#" + randomColor;
+// }
 
 // genNew.addEventListener("click", setBg);
 // setBg();
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ', 1.0)';
+}
 
+console.log(random_rgba())
 
 function handleQueryResponse(response) {
     'use strict'
@@ -205,6 +210,7 @@ function handleQueryResponse(response) {
      pointHoverBackgroundColor: '#fff',
      pointHoverBorderColor: 'rgb(54, 162, 235)'
    }
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
 
     console.log(rows, cols)
@@ -212,17 +218,17 @@ function handleQueryResponse(response) {
 
 
     for (row = 0; row < rows; row += 1) {
-
+      randomColor = random_rgba()
        person = {
          label: 'Prof Another Other Test',
          data: [47, 85, 0, 99, 100, 33, 21, 56, 9],
          fill: true,
-         backgroundColor: 'rgba(54, 162, 235, 0.2)',
-         borderColor: 'rgb(54, 162, 235)',
-         pointBackgroundColor: 'rgb(54, 162, 235)',
+         backgroundColor: randomColor.replace('1.0', '0.2'),
+         borderColor:  randomColor,
+         pointBackgroundColor: randomColor,
          pointBorderColor: '#fff',
          pointHoverBackgroundColor: '#fff',
-         pointHoverBorderColor: 'rgb(54, 162, 235)'
+         pointHoverBorderColor: randomColor
        }
 
 
