@@ -48,7 +48,6 @@ function drawChart() {
 }
 
 google.setOnLoadCallback(drawChart)
-var arr = []
 //     upSymbol = 'fa-sort-up',
 //     downSymbol = 'fa-sort-down',
 //     sortSymbol = 'fa-sort'
@@ -188,10 +187,13 @@ function random_rgba() {
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ', 1.0)';
 }
 
-console.log(random_rgba())
+// console.log(random_rgba())
 
 function handleQueryResponse(response) {
     'use strict'
+
+    var arr = []
+
     var row, col, inner, shuffledArr,
         dataTable = response.getDataTable(),
         rows = dataTable.getNumberOfRows(),
@@ -213,8 +215,8 @@ function handleQueryResponse(response) {
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
 
-    console.log(rows, cols)
-    console.log(dataTable.getValue(0, 0))
+    // console.log(rows, cols)
+    // console.log(dataTable.getValue(0, 0))
 
 
     for (row = 0; row < rows; row += 1) {
@@ -236,7 +238,7 @@ function handleQueryResponse(response) {
 
         label = dataTable.getValue(row, 0) + ' ' +
                 dataTable.getValue(row, 1)
-        console.log(label)
+        // console.log(label)
         person.label = label
         for (col = 2; col < cols - 1; col += 1) {
             inner.push(dataTable.getValue(row, col))
@@ -245,18 +247,10 @@ function handleQueryResponse(response) {
 
         arr.push(person)
 
-        console.log(person)
     }
 
-    console.log('print')
-
-    console.log(arr)
-
-    console.log(myChart.data.datasets)
-
-
-    arr.forEach(element => myChart.data.datasets.push(element));
-
+    myChart.data.datasets = arr
+    // arr.forEach(element => myChart.data.datasets.push(element));
 
     // myChart.data.datasets.push(arr[0]);
 
