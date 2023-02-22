@@ -194,7 +194,7 @@ function handleQueryResponse(response) {
 
     var arr = []
 
-    var row, col, inner, shuffledArr,
+    var row, col, inner, inner2, shuffledArr,
         dataTable = response.getDataTable(),
         rows = dataTable.getNumberOfRows(),
         cols = dataTable.getNumberOfColumns()
@@ -215,6 +215,8 @@ function handleQueryResponse(response) {
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
 
+    var max;
+
     // console.log(rows, cols)
     // console.log(dataTable.getValue(0, 0))
 
@@ -234,16 +236,26 @@ function handleQueryResponse(response) {
        }
 
 
-        inner = []
+        inner = [];
+        inner2 = [];
 
         label = dataTable.getValue(row, 0) + ' ' +
                 dataTable.getValue(row, 1)
         // console.log(label)
         person.label = label
         for (col = 2; col < cols - 1; col += 1) {
-            inner.push(dataTable.getValue(row, col))
+            inner.push(dataTable.getValue(row, col));
+            console.log(dataTable.getValue(row, col));
         }
-        person.data = inner
+
+        max = Math.max.apply(null, inner);
+        console.log('max');
+        console.log(max);
+        for(var i = 0, length = inner.length; i < length; i++){
+            inner2[i] = inner[i] / max * 100;
+        }
+
+        person.data = inner2
 
         arr.push(person)
 
