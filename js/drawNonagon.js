@@ -41,16 +41,20 @@ const myChart = new Chart(ctx, {
       datasets: []
     },
     options: {
-
-scales: {
-    r: {
-        angleLines: {
-            display: false
+        plugins: {
+            legend: {
+                display: false
+            }
         },
-        suggestedMin: 0,
-        suggestedMax: 100
-    }
-}
+        scales: {
+            r: {
+                angleLines: {
+                    display: false
+                },
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
 
     }
 });
