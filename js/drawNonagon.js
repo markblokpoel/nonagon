@@ -46,6 +46,9 @@ const myChart = new Chart(ctx, {
                 display: false
             }
         },
+        tooltips: {
+         enabled: false
+        },
         scales: {
             r: {
                 angleLines: {
